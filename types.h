@@ -42,25 +42,52 @@ cell* create_list(int xs[], const uint len) {
 }
 
 
-void display_list(cell* c) {
-  printf("[");
-  while (c) {
-    if (c->next) {
-      printf("%d, ", c->v);
-    } else {
-      printf("%d]\n", c->v);
-    }
-    c = c->next;
-  }
-}
-
 void free_list(cell* c) {
   cell* tmp;
 
-  while (c != NULL) {
-    /* or simply `if (c) {}` */
+  while (c) {
     tmp = c;
     c = c->next;
     free(tmp);
   }
+}
+
+/* returns value of heading */
+int car(cell* c) {
+  return c->v;
+}
+
+/* returns whole collection values except first cell */
+/* cell* cdr(cell* c, uint len) { */
+
+/*   while (c->next) { */
+
+/*   } */
+/*   return c->next; */
+/* } */
+
+int last(cell* c, uint len) {
+  int res;
+
+  for (int i = 0; i < len; i++) {
+    if (!c->next) {
+      res = c->v;
+    }
+    c = c->next;
+  }
+  return res;
+}
+
+
+void display_list(cell* c) {
+  printf("[");
+
+  while (c) {
+    printf("%d", c->v);
+    if (c->next)
+      printf(", ");
+    c = c->next;
+  }
+
+  printf("]\n");
 }
