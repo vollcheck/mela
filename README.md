@@ -1,12 +1,12 @@
 # mela - scripting fp-like language
 
-really liked the idea of that that expressive language
-https://github.com/mkhan45/RustScript
+really liked the idea of that that expressive language https://github.com/mkhan45/RustScript
+
+the motivation is purely educational - I always wanted to learn clang
 
 ### list of goals
 
 - [ ] basic arithmetic
-
 ```
 > 4 * -3 + 12 - -3 + 4 * 15
 63
